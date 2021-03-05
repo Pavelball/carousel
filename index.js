@@ -10,7 +10,7 @@ $(document).ready(function() {
     }
 })
 
-$('#btn-right').click(function() {
+function rightClick() {
         let temp;
         for (let i = 0; i < imgClass.length; i++) {
             if (imgClass[i].style.zIndex != "0") {
@@ -25,13 +25,10 @@ $('#btn-right').click(function() {
                     temp = i;
                 }
                 break;
-                /*i < imgClass.length-1 ? imgClass[++i].style.zIndex = '10' : imgClass[0].style.zIndex = '10';*/
             }
-            /*$( "div" ).slideToggle();*/
         }
         $("."+`${imgClass[temp].classList[1]}`).toggle("slow", "linear");
     }
-)
 
 function leftClick() {
     let temp;
