@@ -24,14 +24,14 @@ function rightClick() {
                 if (i < imgClass.length-1) {
                     temp = i;
                     $("."+`${imgClass[++i].className}`).toggle(400, "linear", function () {
-                        $("."+`${imgClass[temp].className}`).toggle("slow", "linear")
+                        $("."+`${imgClass[temp].className}`).toggle(0)
                     });
                     imgClass[i].style.zIndex = '10';
                 } else {
                     imgClass[0].style.zIndex = '10';
                     temp = i;
                     $("."+`${imgClass[0].className}`).toggle(400, "linear", function () {
-                        $("."+`${imgClass[temp].className}`).toggle("slow", "linear")
+                        $("."+`${imgClass[temp].className}`).toggle(0)
                     });
                 }
                 break;
@@ -48,7 +48,7 @@ function leftClick() {
             if (i != 0) {
                 temp = i;
                 $("."+`${imgClass[--i].className}`).toggle(400, "linear", function () {
-                    $("."+`${imgClass[temp].className}`).toggle("slow", "linear")
+                    $("."+`${imgClass[temp].className}`).toggle(0)
                 });
                 imgClass[i].style.zIndex = '10';
             }
@@ -56,7 +56,7 @@ function leftClick() {
                 imgClass[3].style.zIndex = '10';
                 temp = i;
                 $("."+`${imgClass[3].className}`).toggle(400, "linear", function () {
-                    $("."+`${imgClass[temp].className}`).toggle("slow", "linear")
+                    $("."+`${imgClass[temp].className}`).toggle(0)
                 });
             }
             break;
