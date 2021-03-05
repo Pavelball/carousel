@@ -1,0 +1,40 @@
+* {
+  transition: all 0.2s linear; }
+
+body {
+  background-color: #850404; }
+  body div {
+    display: flex;
+    width: 1000px;
+    margin: auto; }
+    body div button {
+      border: none;
+      outline: none;
+      background-color: unset; }
+    body div .arrow {
+      border: solid black;
+      border-width: 0 7px 7px 0;
+      display: inline-block;
+      padding: 10px; }
+    body div .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg); }
+    body div .left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg); }
+    body div button:active:first-child i {
+      transform: rotate(100deg); }
+    body div button:active:last-child i {
+      transform: rotate(-10deg); }
+    body div section {
+      width: 920px;
+      height: 450px;
+      background-color: black; }
+      body div section img {
+        width: 920px;
+        height: 450px;
+        position: absolute;
+        transition: transform 20s;
+        transition-duration: 10s; }
+
+/*# sourceMappingURL=index.css.map */
