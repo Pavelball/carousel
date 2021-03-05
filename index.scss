@@ -1,5 +1,6 @@
 * {
     transition: all 0.1s linear;
+    user-select: none; 
 }
 
 body {
@@ -50,6 +51,7 @@ body {
                 position: absolute;
                 transition: transform 20s;
                 transition-duration: 10s;
+                pointer-events: none;
             }
         }
     }

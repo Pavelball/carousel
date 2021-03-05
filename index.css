@@ -1,5 +1,6 @@
 * {
-  transition: all 0.1s linear; }
+  transition: all 0.1s linear;
+  user-select: none; }
 
 body {
   background-color: #850404; }
@@ -35,6 +36,7 @@ body {
         height: 450px;
         position: absolute;
         transition: transform 20s;
-        transition-duration: 10s; }
+        transition-duration: 10s;
+        pointer-events: none; }
 
 /*# sourceMappingURL=index.css.map */
