@@ -21,5 +21,17 @@
         <button id="btn-right" onclick="rightClick()"><i class="arrow right"></i></button>
     </div>
     <script src="index.js"></script>
+    <div id='fileNames'></div>
+
+    <script type="text/javascript">
+        $(document).ready(function () 
+        {
+            $.get("media", function(data) 
+            {
+                $("#fileNames").append(data);
+                console.log(document.getElementsByClassName('view-tiles')[0].getElementsByTagName("a")[1].getElementsByTagName("span")[0].textContent);
+            });
+        })
+    </script>
 </body>
 </html>
