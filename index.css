@@ -30,7 +30,8 @@ body {
     body div section {
       width: 920px;
       height: 450px;
-      background-color: black; }
+      background-color: black;
+      position: relative; }
       body div section img {
         width: 920px;
         height: 450px;

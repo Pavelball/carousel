@@ -7,7 +7,7 @@ $(document).ready(function() {
     for (let i = 1; i < imgClass.length; i++) {
         imgClass[i].style.zIndex = '0';
         imgClass[i].classList.add(i);
-        $("."+`${imgClass[i].className}`).slideToggle();
+        imgClass[i].style.display = 'none'
     }
 })
 
@@ -23,15 +23,15 @@ function rightClick() {
                 imgClass[i].style.zIndex = '0';
                 if (i < imgClass.length-1) {
                     temp = i;
-                    $("."+`${imgClass[++i].className}`).toggle(400, "linear", function () {
-                        $("."+`${imgClass[temp].className}`).toggle(0)
+                    $("."+`${imgClass[++i].className}`).animate({width: "toggle"}, 400, "linear", function() {
+                        imgClass[temp].style.display = 'none'
                     });
                     imgClass[i].style.zIndex = '10';
                 } else {
                     imgClass[0].style.zIndex = '10';
                     temp = i;
-                    $("."+`${imgClass[0].className}`).toggle(400, "linear", function () {
-                        $("."+`${imgClass[temp].className}`).toggle(0)
+                    $("."+`${imgClass[0].className}`).animate({width: "toggle"}, 400, "linear", function() {
+                        imgClass[temp].style.display = 'none'
                     });
                 }
                 break;
@@ -47,16 +47,19 @@ function leftClick() {
             imgClass[i].style.zIndex = '0';
             if (i != 0) {
                 temp = i;
-                $("."+`${imgClass[--i].className}`).toggle(400, "linear", function () {
-                    $("."+`${imgClass[temp].className}`).toggle(0)
+                console.log(i);
+                $("."+`${imgClass[--i].className}`).animate({width: "toggle", right: '0'}, 400, "linear", function() {
+                    imgClass[temp].style.display = 'none';
+                    console.log(i);
+                    imgClass[i].removeAttribute("style");
                 });
                 imgClass[i].style.zIndex = '10';
             }
             else {
-                imgClass[3].style.zIndex = '10';
                 temp = i;
-                $("."+`${imgClass[3].className}`).toggle(400, "linear", function () {
-                    $("."+`${imgClass[temp].className}`).toggle(0)
+                $("."+`${imgClass[imgClass.length-1].className}`).animate({right: '0', width: "toggle"}, 400, "linear", function() {
+                    imgClass[temp].style.display = 'none'
+                    imgClass[imgClass.length-1].style.cssText = "z-index: 10;";
                 });
             }
             break;
