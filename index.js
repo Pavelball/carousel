@@ -1,4 +1,5 @@
 let imgClass = document.getElementsByClassName('img');
+var timer = setInterval(rightClick, 4000);
 
 $(document).ready(function() {
     imgClass[0].classList.add(0);
@@ -9,6 +10,11 @@ $(document).ready(function() {
         $("."+`${imgClass[i].classList[1]}`).slideToggle();
     }
 })
+
+function restartTimer() {
+    clearInterval(timer);
+    timer = setInterval(rightClick, 4000);
+}
 
 function rightClick() {
         let temp;
@@ -28,6 +34,7 @@ function rightClick() {
             }
         }
         $("."+`${imgClass[temp].classList[1]}`).toggle("slow", "linear");
+        restartTimer();
     }
 
 function leftClick() {
@@ -49,4 +56,5 @@ function leftClick() {
         }
     }   
     $("."+`${imgClass[temp].classList[1]}`).toggle("slow", "linear"); 
+    restartTimer();
 }
