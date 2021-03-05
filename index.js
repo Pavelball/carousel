@@ -22,18 +22,21 @@ function rightClick() {
             if (imgClass[i].style.zIndex != "0") {
                 imgClass[i].style.zIndex = '0';
                 if (i < imgClass.length-1) {
-                    $("."+`${imgClass[++i].className}`).slideToggle(300, "linear");
+                    temp = i;
+                    $("."+`${imgClass[++i].className}`).toggle(400, "linear", function () {
+                        $("."+`${imgClass[temp].className}`).toggle("slow", "linear")
+                    });
                     imgClass[i].style.zIndex = '10';
-                    temp = --i;
                 } else {
                     imgClass[0].style.zIndex = '10';
-                    $("."+`${imgClass[0].className}`).slideToggle(300, "linear");
                     temp = i;
+                    $("."+`${imgClass[0].className}`).toggle(400, "linear", function () {
+                        $("."+`${imgClass[temp].className}`).toggle("slow", "linear")
+                    });
                 }
                 break;
             }
         }
-        $("."+`${imgClass[temp].className}`).toggle("slow", "linear");
         restartTimer();
     }
 
@@ -43,18 +46,21 @@ function leftClick() {
         if (imgClass[i].style.zIndex != "0") {
             imgClass[i].style.zIndex = '0';
             if (i != 0) {
-                $("."+`${imgClass[--i].className}`).slideToggle(300, "linear");
+                temp = i;
+                $("."+`${imgClass[--i].className}`).toggle(400, "linear", function () {
+                    $("."+`${imgClass[temp].className}`).toggle("slow", "linear")
+                });
                 imgClass[i].style.zIndex = '10';
-                temp = ++i;
             }
             else {
                 imgClass[3].style.zIndex = '10';
-                $("."+`${imgClass[3].className}`).slideToggle(300, "linear");
                 temp = i;
+                $("."+`${imgClass[3].className}`).toggle(400, "linear", function () {
+                    $("."+`${imgClass[temp].className}`).toggle("slow", "linear")
+                });
             }
             break;
         }
     }   
-    $("."+`${imgClass[temp].className}`).toggle("slow", "linear"); 
     restartTimer();
 }
