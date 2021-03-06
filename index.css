@@ -11,7 +11,8 @@ body {
     body div button {
       border: none;
       outline: none;
-      background-color: unset; }
+      background-color: unset;
+      cursor: pointer; }
     body div .arrow {
       border: solid black;
       border-width: 0 7px 7px 0;
