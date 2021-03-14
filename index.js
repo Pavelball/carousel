@@ -24,11 +24,11 @@ $('#btn-right').click(function() {
             if (i < imgClass.length-1) {
                 $(`.${imgClass[i].className}`).animate({width: "toggle"}, 400, "linear");
                 $(`.${imgClass[++i].className}`).animate({width: "toggle", right: '0'}, 400, "linear", function() {
-                    imgClass[i].style.right = 'initial';
+                    $(`.${imgClass[i].className}`).css('right', '');
                 });
             } else {
                 $(`.${imgClass[0].className}`).animate({width: "toggle", right: '0'}, 400, "linear", function() {
-                    imgClass[0].style.right = 'initial';
+                    $(`.${imgClass[0].className}`).css('right', '');
                 });
                 $(`.${imgClass[i].className}`).animate({width: "toggle"}, 400, "linear");
             }
@@ -44,7 +44,7 @@ $('#btn-left').click(function() {
         if (imgClass[i].style.display != "none") {
             if (i != 0) {
                 $(`.${imgClass[i].className}`).animate({width: "toggle", right: '0'}, 400, "linear", function() {
-                    imgClass[++i].style.right = 'initial';
+                    $(`.${imgClass[++i].className}`).css('right', '');
                 });
                 $(`.${imgClass[--i].className}`).animate({width: "toggle"}, 400, "linear", function() {
                 });
@@ -52,7 +52,7 @@ $('#btn-left').click(function() {
             else {
                 $(`.${imgClass[imgClass.length-1].className}`).animate({width: "toggle"}, 400, "linear");
                 $(`.${imgClass[0].className}`).animate({width: "toggle", right: '0'}, 400, "linear", function() {
-                    imgClass[0].style.right = 'initial';
+                    $(`.${imgClass[0].className}`).css('right', '');
                 });
             }
             break;
