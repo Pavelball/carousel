@@ -14,8 +14,8 @@ var contJpg = [
 $(document).ready(function () {
     for (let i = 0; i < imgClass.length; i++) 
         imgClass[i].classList.add(i);
+        
     $(`.${imgClass[1].className}`).attr('src', `${contJpg[0]}`);
-    $(`.${imgClass[0].className}`).css('margin-left', '-100%');
     $(`.${imgClass[0].className}`).attr('src', `${contJpg[contJpg.length-1]}`);
 })
 
