@@ -15,6 +15,7 @@ $(document).ready(function () {
     for (let i = 0; i < imgClass.length; i++) 
         imgClass[i].classList.add(i);
         
+    $(`.${imgClass[2].className}`).attr('src', `${contwebp[1]}`);
     $(`.${imgClass[1].className}`).attr('src', `${contwebp[0]}`);
     $(`.${imgClass[0].className}`).attr('src', `${contwebp[contwebp.length-1]}`);
 })
