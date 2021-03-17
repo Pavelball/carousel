@@ -2,21 +2,21 @@ var imgClass = document.getElementById('parentsImg').getElementsByTagName('img')
 var timer = setInterval(function() {
     $('#btn-right').click();
 }, 4000);
-var contJpg = [
-    "media/egor-blintsov-morrslieb-rising.jpg",
-    "media/egor-blintsov-night-harbor.jpg",
-    "media/egor-blintsov-rox-to-eden.jpg",
-    "media/egor-blintsov-witcher-2.jpg",
-    "media/warShips.jpg",
-    "media/bart-tchorzewski-2-painted.jpg"
+var contwebp = [
+    "media/egor-blintsov-morrslieb-rising.webp",
+    "media/egor-blintsov-night-harbor.webp",
+    "media/egor-blintsov-rox-to-eden.webp",
+    "media/egor-blintsov-witcher-2.webp",
+    "media/warShips.webp",
+    "media/bart-tchorzewski-2-painted.webp"
 ]
 
 $(document).ready(function () {
     for (let i = 0; i < imgClass.length; i++) 
         imgClass[i].classList.add(i);
         
-    $(`.${imgClass[1].className}`).attr('src', `${contJpg[0]}`);
-    $(`.${imgClass[0].className}`).attr('src', `${contJpg[contJpg.length-1]}`);
+    $(`.${imgClass[1].className}`).attr('src', `${contwebp[0]}`);
+    $(`.${imgClass[0].className}`).attr('src', `${contwebp[contwebp.length-1]}`);
 })
 
 function restartTimer() {
@@ -31,15 +31,15 @@ $('#btn-right').click(function () {
     let temp = 0;
     $('.btn').prop("disabled", true);
     $('.right').css('transform', 'rotate(-10deg)');
-    for (let i = 0; i < contJpg.length; i++) {
-        if ($(`.${imgClass[1].className}`).attr("src") == contJpg[i]) {
-            if (i == contJpg.length - 1) {
+    for (let i = 0; i < contwebp.length; i++) {
+        if ($(`.${imgClass[1].className}`).attr("src") == contwebp[i]) {
+            if (i == contwebp.length - 1) {
                 $(`.${imgClass[1].className}`).css('margin-left', '-100%');
-                $(`.${imgClass[2].className}`).attr('src', `${contJpg[temp]}`);
+                $(`.${imgClass[2].className}`).attr('src', `${contwebp[temp]}`);
             } else {
                 temp = i + 1;
                 $(`.${imgClass[1].className}`).css('margin-left', '-100%');
-                $(`.${imgClass[2].className}`).attr('src', `${contJpg[temp]}`);
+                $(`.${imgClass[2].className}`).attr('src', `${contwebp[temp]}`);
             }
             break;
         }
@@ -49,7 +49,7 @@ $('#btn-right').click(function () {
     }, 100)
 
     setTimeout(function () {
-        $(`.${imgClass[1].className}`).attr('src', `${contJpg[temp]}`);
+        $(`.${imgClass[1].className}`).attr('src', `${contwebp[temp]}`);
         $(`.${imgClass[1].className}`).css({
             'display': 'none',
             'margin-left': '0%'
@@ -67,16 +67,16 @@ $('#btn-left').click(function () {
     let temp = 0;
     $('.btn').prop("disabled", true);
     $('.left').css('transform', 'rotate(100deg)');
-    for (let i = 0; i < contJpg.length; i++) {
-        if ($(`.${imgClass[1].className}`).attr("src") == contJpg[i]) {
+    for (let i = 0; i < contwebp.length; i++) {
+        if ($(`.${imgClass[1].className}`).attr("src") == contwebp[i]) {
             if (i == 0) {
-                temp = contJpg.length-1;
-                $(`.${imgClass[0].className}`).attr('src', `${contJpg[temp]}`);
+                temp = contwebp.length-1;
+                $(`.${imgClass[0].className}`).attr('src', `${contwebp[temp]}`);
                 $(`.${imgClass[0].className}`).css('margin-left', ``);
             } else {
                 temp = i - 1;
                 $(`.${imgClass[0].className}`).css('margin-left', '');
-                $(`.${imgClass[0].className}`).attr('src', `${contJpg[temp]}`);
+                $(`.${imgClass[0].className}`).attr('src', `${contwebp[temp]}`);
             }
             break;
         }
@@ -86,7 +86,7 @@ $('#btn-left').click(function () {
     }, 100)
 
     setTimeout(function () {
-        $(`.${imgClass[1].className}`).attr('src', `${contJpg[temp]}`);
+        $(`.${imgClass[1].className}`).attr('src', `${contwebp[temp]}`);
         $(`.${imgClass[0].className}`).css({
             'display': 'none',
             'margin-left': '-100%'
