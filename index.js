@@ -56,6 +56,10 @@ $('#btn-right').click(function () {
             'margin-left': '0%'
         });
         setTimeout(function() {
+            if (temp == contwebp.length-1) 
+                $(`.${imgClass[2].className}`).attr('src', `${contwebp[0]}`);
+            else 
+                $(`.${imgClass[2].className}`).attr('src', `${contwebp[temp+1]}`);
             $(`.${imgClass[1].className}`).css('display', '');
             $('.btn').prop("disabled", false);
         }, 100); 
@@ -95,6 +99,10 @@ $('#btn-left').click(function () {
         setTimeout(function() {
             $(`.${imgClass[0].className}`).css('display', '');
             $('.btn').prop("disabled", false);
+            if (temp == 1) 
+                $(`.${imgClass[0].className}`).attr('src', `${contwebp[contwebp.length-1]}`);
+            else 
+                $(`.${imgClass[0].className}`).attr('src', `${contwebp[temp]}`);
         }, 100); 
     }, 1000);
 })
